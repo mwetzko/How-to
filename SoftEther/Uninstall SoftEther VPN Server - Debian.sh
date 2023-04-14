@@ -2,8 +2,8 @@
 
 sudo systemctl disable softether-vpnserver
 
-sudo rm /etc/systemd/system/softether-vpnserver.service
+sudo rm -f /etc/systemd/system/softether-vpnserver.service
 
-sudo rm -r /usr/local/vpnserver
+sudo rm -rf /usr/local/vpnserver
 
 echo "Done!"
