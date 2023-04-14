@@ -1,6 +1,6 @@
 # Install SoftEther VPN Server or VPN Edge (Server) on Linux 'Debian' based systems
 
-Tested with: Debian 11, Raspberry Pi OS
+Tested with: Debian 11 x64, Raspberry Pi OS x86, Raspberry Pi OS ARM
 
 1. Download `Install SoftEther VPN Server - Debian.sh` to your device where SoftEther VPN Server or SoftEther VPN Edge has to be installed. Make sure to put the script into an empty writable folder.
 2. Go to `https://www.softether-download.com/en.aspx?product=softether`, select the proper version for your system and **copy the link**
