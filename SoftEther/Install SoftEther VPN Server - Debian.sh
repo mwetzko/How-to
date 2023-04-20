@@ -34,7 +34,11 @@ cd softether-extract
 # build
 make
 
-if ! [ -f vpnserver ]; then
+if [ -f vpnserver ]; then
+    vpnexe="vpnserver"
+elif [ -f vpnbridge ]; then
+    vpnexe="vpnbridge"
+else
     echo "Failed to build! Make sure you have chosen the correct platform version (x86, x64, ARM, ARM64, etc.)"
     cd ..
     rm -rf softether-extract
@@ -55,7 +59,7 @@ cd /usr/local/vpnserver
 
 # change access accordingly
 sudo chmod 600 *
-sudo chmod 700 vpnserver
+sudo chmod 700 $vpnexe
 sudo chmod 700 vpncmd
 
 # create service/daemon file
@@ -72,7 +76,7 @@ After=dbus.service
 
 Type=forking
 
-ExecStart=/usr/local/vpnserver/vpnserver start
+ExecStart=/usr/local/vpnserver/$vpnexe start
 
 ExecReload=/bin/kill -HUP \$MAINPID
 
