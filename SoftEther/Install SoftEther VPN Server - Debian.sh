@@ -85,6 +85,8 @@ ExecReload=/bin/kill -HUP \$MAINPID
 WantedBy=multi-user.target
 EOF
 
-sudo systemctl enable softether-vpnserver
+sudo systemctl start softether-vpnserver.service
+
+sudo systemctl enable softether-vpnserver.service
 
 echo "Done!"
